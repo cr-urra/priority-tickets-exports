@@ -2,6 +2,7 @@
   "name": "priority-tickets-export",
   "version": "0.1.0",
   "private": true,
+  "homepage": "cr-urra.github.io/priority-tickets-exports",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
@@ -9,12 +10,15 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "bootstrap-react": "^0.5.0-alpha.14",
+    "gh-pages": "^3.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
