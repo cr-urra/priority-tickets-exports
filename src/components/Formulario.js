@@ -14,7 +14,9 @@ export default class formulario extends Component {
       user: this.state.user, 
       pwd: this.state.pwd
     }
-    const res = axios.get(this.state.url, auth)
+    let r = {auth}
+    console.log(r);
+    const res = await axios.get(this.state.url, {auth})
     console.log(res);
   }
 
