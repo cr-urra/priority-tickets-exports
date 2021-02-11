@@ -9,7 +9,7 @@ export default class formulario extends Component {
     pwd: "Pr10r1ty2019"
   }
 
-  componentDidMount = () => {
+  componentDidMount = async () => {
     const auth = {
       user: this.state.user, 
       pwd: this.state.pwd
