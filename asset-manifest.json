@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/cr-urra.github.io/priority-tickets-exports/static/css/main.68783c87.chunk.css",
+    "main.js": "/cr-urra.github.io/priority-tickets-exports/static/js/main.312cf2f6.chunk.js",
+    "main.js.map": "/cr-urra.github.io/priority-tickets-exports/static/js/main.312cf2f6.chunk.js.map",
+    "runtime-main.js": "/cr-urra.github.io/priority-tickets-exports/static/js/runtime-main.2371aa87.js",
+    "runtime-main.js.map": "/cr-urra.github.io/priority-tickets-exports/static/js/runtime-main.2371aa87.js.map",
+    "static/js/2.a96d1e70.chunk.js": "/cr-urra.github.io/priority-tickets-exports/static/js/2.a96d1e70.chunk.js",
+    "static/js/2.a96d1e70.chunk.js.map": "/cr-urra.github.io/priority-tickets-exports/static/js/2.a96d1e70.chunk.js.map",
+    "static/js/3.0c7b02b6.chunk.js": "/cr-urra.github.io/priority-tickets-exports/static/js/3.0c7b02b6.chunk.js",
+    "static/js/3.0c7b02b6.chunk.js.map": "/cr-urra.github.io/priority-tickets-exports/static/js/3.0c7b02b6.chunk.js.map",
+    "index.html": "/cr-urra.github.io/priority-tickets-exports/index.html",
+    "static/css/main.68783c87.chunk.css.map": "/cr-urra.github.io/priority-tickets-exports/static/css/main.68783c87.chunk.css.map",
+    "static/js/2.a96d1e70.chunk.js.LICENSE.txt": "/cr-urra.github.io/priority-tickets-exports/static/js/2.a96d1e70.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/cr-urra.github.io/priority-tickets-exports/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2371aa87.js",
+    "static/js/2.a96d1e70.chunk.js",
+    "static/css/main.68783c87.chunk.css",
+    "static/js/main.312cf2f6.chunk.js"
+  ]
+}
