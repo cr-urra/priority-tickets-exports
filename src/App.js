@@ -15,7 +15,6 @@ function App() {
                 <h1 className="col-xs-2 col-md-8 col-lg-9 mt8 pl-5">Exportador de Tickets</h1>
               </div>
               <Formulario/>
-              <h5 className="mt-3">© Copyright 2021 | Todos los derechos reservados a Priority Ltda.</h5>
             </header>
           </div>
 

@@ -1,3 +1,9 @@
+@media (max-width: 600px) {
+  .pl10 {
+    padding-left: 8% !important;
+  }
+}
+
 @media (min-width: 768px) {
   .mt8 {
     margin-top: 8%;

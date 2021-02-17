@@ -23,7 +23,7 @@ export default class formulario extends Component {
   }
   
   render() {
-      return  <div className="col-xs-8 col-md-8 col-lg-5">
+      return  <div className="col-xs-8 col-md-8 col-lg-5 pl10">
                 <div className="card card-body">
                   <h5 className="mb-5 text-left">Bienvenido a la herramienta de exportación de tickets. Para procesar una solicitud de forma correcta, por favor seguir los pasos descritos a continuación:</h5>
                   <h6 className="mb-4 text-left">1) Haga clic en el siguiente botón de autenticar, lo redirigirá al formulario de autenticación de Zendesk para solicitar su Token de acceso (Su cuenta debe tener rol de agente o administrador):</h6>
@@ -32,7 +32,7 @@ export default class formulario extends Component {
                   </a>
                   <h6 className="mb-4 text-left">2) Ingrese en el siguiente campo el nombre del cliente del que desea exportar sus tickets:</h6>
                   <div className="form-group">
-                        <input type="Tel" className="form-control" placeholder="Ej: 123456789" name="rut" onChange={this.onInputChange} required/>
+                        <input type="Tel" className="form-control" placeholder="Nombre del cliente" name="rut" onChange={this.onInputChange} required/>
                   </div>
                   <h6 className="mb-4 text-left">3) Seleccione el formato del documento a exportar:</h6>
                   <select className="mb-4 form-control">
@@ -45,6 +45,7 @@ export default class formulario extends Component {
                     <button type="button" className="btn btn-danger mb-4">Procesar solicitud</button>
                   </a>
                 </div>
+                <h6 className="mt-3">© Copyright 2021 | Todos los derechos reservados a Priority Ltda.</h6>
               </div>
        
     }
