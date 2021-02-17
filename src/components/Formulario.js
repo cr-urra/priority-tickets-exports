@@ -3,21 +3,28 @@ import axios from 'axios'
 
 export default class formulario extends Component {
 
+  state = {
+    token: ""
+  }
+
   componentDidMount = async () => {
     let direction = 'http://localhost:3000/priority-tickets-exports'
     let url = window.location.href;
     if(url.indexOf(direction) !== -1){
-      if (url.indexOf('access_token=') !== -1){
-        let token = url.replace(direction+"#access_token=", "")
-        token = token.substr(0,token.indexOf("&"))
+      if(url.indexOf('access_token=') !== -1){
+        let originalToken = url.replace(direction+"#access_token=", "")
+        this.setState({
+          token: originalToken.substr(0, originalToken.indexOf("&"))
+        })
         const res = await axios.get("https://priority.zendesk.com/api/v2/tickets.json?page=5",{
           headers: {
-            Authorization: 'Bearer '+token
+            Authorization: 'Bearer '+ this.token
           }
         })
         console.log(res);
       }else if(url.indexOf('error=') !== -1){
-
+        alert("Ha ocurrido un error en la obtención del Token")
+        console.log("Error: ", url)
       }
     }
   }
