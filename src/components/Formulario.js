@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import PDF from './Pdf'
 
 export default class Formulario extends Component {
 
@@ -9,7 +11,11 @@ export default class Formulario extends Component {
     clienteMay: "",
     clienteMin: "",
     format: "",
-    tickets: []
+    tickets: [],
+    ticketsFilter: [],
+    pdf: true,
+    xslx: false,
+    button: false
   }
 
   componentDidMount = async () => {
@@ -84,7 +90,10 @@ export default class Formulario extends Component {
     const error = "Ha ocurrido un error al procesar la solicitud"
     this.setState({
       clienteMay: await this.onMayus(this.state.cliente),
-      clienteMin: await this.onMinus(this.state.cliente)
+      clienteMin: await this.onMinus(this.state.cliente),
+      pdf: false,
+      xslx: false,
+      button: true
     })
     if(this.state.token !== "" 
       && this.state.cliente !== "" 
@@ -95,27 +104,44 @@ export default class Formulario extends Component {
       try{
         await this.importTickets()
         console.log("Tickets: ", this.state.tickets);
-        let ticketsFilter = this.state.tickets.filter(ticket => {
+        let filtrado = this.state.tickets.filter(ticket => {
           if(ticket.fields[0].value === this.state.clienteMay || ticket.fields[0].value === this.state.clienteMin)
             return true
           else
             return false  
         })
-        ticketsFilter = ticketsFilter.filter(ticket => {
+        filtrado = filtrado.filter(ticket => {
           if(ticket.status === "open" || ticket.status == "pending")
             return true
           else
             return false
         })
-        console.log("filter: ", ticketsFilter);
+        this.setState({
+          ticketsFilter: filtrado
+        })
+        this.setState({
+          button: false
+        })
+        this.state.format ? this.setState({
+          pdf: true
+        }) : this.setState({
+          xslx: true
+        })
+        console.log("filter: ", this.state.ticketsFilter);
 
       }catch(e){
         alert(error)
         console.log("Error: ", e);
+        this.setState({
+          button: false
+        })
       }
     }else{
       alert(error);
       console.log("Problemas en los parámetros de entrada ");
+      this.setState({
+        button: false
+      })
     }
   }
 
@@ -138,12 +164,25 @@ export default class Formulario extends Component {
                     <option value={false}>Formato XLSX</option>
                   </select>
                   <h6 className="mb-4 text-left">4) Haga clic en el siguiente botón de procesar solicitud para realizar la exportación:</h6>
-                  <button type="button" className="btn btn-danger mb-4" onClick={() => this.onChange()}>
+                  <button type="button" className="btn btn-danger mb-4" disabled={this.state.button} onClick={() => this.onChange()}>
                     Procesar solicitud
                   </button>
+                  {
+                    this.state.pdf && <h6 className="mb-4 text-left">Documento PDF generado correctamente, para descargar hacer click en el botón de Descargar PDF a continuación</h6>
+                  }
+                  {
+                    this.state.pdf && 
+                    <PDFDownloadLink document={<PDF/>} fileName="movielist.pdf" className="btn btn-danger"> 
+                    {
+                      ({ blob, url, loading, error }) => loading ? "Cargando documento..." : "Descargar PDF"
+                    }
+                    </PDFDownloadLink>
+                  }
                 </div>
                 <h6 className="mt-3">© Copyright 2021 | Todos los derechos reservados a Priority Ltda.</h6>
               </div>
        
     }
 }
+
+//                {this.state.pdf && <PDF/>}
