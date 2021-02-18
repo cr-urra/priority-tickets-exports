@@ -10,7 +10,7 @@ function App() {
             <header className="App-header">
               <div className="row mb-4">
                 <div className="col-xs-4 col-md-4 col-lg-3">
-                  <img src={logo} Alt="Logo"></img>
+                  <img src={logo} alt="Logo"></img>
                 </div>
                 <h1 className="col-xs-2 col-md-8 col-lg-9 mt8 pl-5">Exportador de Tickets</h1>
               </div>
