@@ -1,27 +1,27 @@
-import React, { Component} from 'react'
-import logo from '../logo.jpg'
+import React, { Component } from 'react'
+import ExportExcel from 'react-export-excel'
 import Ticket from './Ticket'
+import ReactHTMLTableToExcel from 'react-html-table-to-excel'
 
-export default class Pdf extends Component {
+const ExcelFile = ExportExcel.ExcelFile
+const ExcelSheet = ExportExcel.ExcelSheet
+const ExcelColumn = ExportExcel.ExcelColumn
 
+export default class CreateXSLX extends Component {
     render() {
         return  <div>
-                    <div className="text-left pl-5 pt-5">
-                        <img src={logo} alt="Logo"></img>
-                    </div>
-                    <div className="text-center">
-                        <h1>Tickets {this.props.cliente}</h1>
-                    </div>
-                    <div className="pl-5 pr-5 pb-5 mt-5">
-                        <table className="table">
+                    <ReactHTMLTableToExcel id="boton-xslx" className="btn btn-danger" table="datos" filename={this.props.cliente} sheet="Tickets" buttonText="Descargar XSLX"/>
+                    <div className="pl-5 pr-5 pb-5 d-none">
+                        <table className="table" id="datos">
                             <thead>
                                 <tr>
                                     <th scope="col">Id</th>
                                     <th scope="col">Solicitante</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Asunto</th>
+                                    
                                 </tr>
-                            </thead>
+                                </thead>
                             <tbody>
                                 {this.props.tickets.map(ticket => <Ticket ticket={ticket} key={ticket.id}/>)}
                             </tbody>
@@ -30,4 +30,3 @@ export default class Pdf extends Component {
                 </div>
     }
 }
-

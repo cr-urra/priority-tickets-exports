@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-//import { PDFDownloadLink } from "@react-pdf/renderer";
+import Xslx from "./CreateXSLX";
 import Pdf from './CreatePDF'
 
 export default class Formulario extends Component {
@@ -93,7 +93,9 @@ export default class Formulario extends Component {
       clienteMin: await this.onMinus(this.state.cliente),
       pdf: false,
       xslx: false,
-      button: true
+      button: true,
+      tickets: [],
+      ticketsFilter: []
     })
     if(this.state.token !== "" 
       && this.state.cliente !== "" 
@@ -111,7 +113,7 @@ export default class Formulario extends Component {
             return false  
         })
         filtrado = filtrado.filter(ticket => {
-          if(ticket.status === "open" || ticket.status == "pending")
+          if(ticket.status === "open" || ticket.status == "pending" || ticket.status == "new")
             return true
           else
             return false
@@ -122,9 +124,10 @@ export default class Formulario extends Component {
         this.setState({
           button: false
         })
-        this.state.format ? this.setState({
+        this.state.format === "1" && this.setState({
           pdf: true
-        }) : this.setState({
+        }) 
+        this.state.format === "0" && this.setState({
           xslx: true
         })
         console.log("filter: ", this.state.ticketsFilter);
@@ -160,18 +163,24 @@ export default class Formulario extends Component {
                   <h6 className="mb-4 text-left">3) Seleccione el formato del documento a exportar:</h6>
                   <select className="mb-4 form-control" value={this.state.format} onChange={this.onChangeFormat}>
                     <option defaultValue>Tipo de formato</option>
-                    <option value={true}>Formato PDF</option>
-                    <option value={false}>Formato XLSX</option>
+                    <option value={"1"}>Formato PDF</option>
+                    <option value={"0"}>Formato XLSX</option>
                   </select>
                   <h6 className="mb-4 text-left">4) Haga clic en el siguiente botón de procesar solicitud para realizar la exportación:</h6>
                   <button type="button" className="btn btn-danger mb-4" disabled={this.state.button} onClick={() => this.onChange()}>
                     Procesar solicitud
                   </button>
                   {
-                    this.state.pdf && <h6 className="mb-4 text-left">Documento PDF generado correctamente, para descargar hacer click en el botón de Descargar PDF a continuación</h6>
+                    this.state.pdf && <h6 className="mb-4 text-left">Documento PDF generado correctamente, para descargar hacer click en el botón de Descargar PDF a continuación:</h6>
                   }
                   {
                     this.state.pdf && <Pdf tickets={this.state.ticketsFilter} cliente={this.state.clienteMay.toUpperCase()}/>
+                  }
+                  {
+                    this.state.xslx && <h6 className="mb-4 text-left">Planilla XSLX generada correctamente, para descargar hacer click en el botón de Descargar XSLX a continuación:</h6>
+                  }
+                  {
+                    this.state.xslx && <Xslx tickets={this.state.ticketsFilter} cliente={this.state.clienteMay.toUpperCase()}/>
                   }
                 </div>
                 <h6 className="mt-3">© Copyright 2021 | Todos los derechos reservados a Priority Ltda.</h6>

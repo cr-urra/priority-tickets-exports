@@ -8,7 +8,7 @@ export default class CreatePDF extends Component {
         return  <div>
                     <ReactToPrint
                             trigger={() => {
-                                return <button className="btn btn-danger">Descargar PDF</button>;
+                                return <button className="btn btn-danger mb-5">Descargar PDF</button>;
                             }}
                             content={() => this.componentRef}
                         />
