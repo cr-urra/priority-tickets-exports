@@ -1,41 +1,33 @@
 import React, { Component} from 'react'
-import { Page, Text, View, Document, StyleSheet} from '@react-pdf/renderer';
-
-const styles = StyleSheet.create({
-    page: {
-      flexDirection: 'row',
-      backgroundColor: '#E4E4E4'
-    },
-    section: {
-      marginTop: 100,
-      padding: 10,
-      flexGrow: 1
-    },
-    title: {
-      textAlign: 'center',
-      margin: 10,
-      padding: 0,
-      flexGrow: 1
-    }
-  });
+import logo from '../logo.jpg'
+import Ticket from './Ticket'
 
 export default class Pdf extends Component {
+
     render() {
-        return (
-            <Document>
-                <Page size="A4" style={styles.page}>
-                    <View style={styles.title}>
-                        <Text>Informe de tickets pendientes - Remavesa</Text>
-                    </View>
-                    <View style={styles.section}>
-                        <Text>Section #1</Text>
-                    </View>
-                    <View style={styles.section}>
-                        <Text>Section #2</Text>
-                    </View>
-                </Page>
-            </Document>
-        )  
+        return  <div>
+                    <div className="text-left pl-5 pt-5">
+                        <img src={logo} alt="Logo"></img>
+                    </div>
+                    <div className="text-center">
+                        <h1>Tickets {this.props.cliente}</h1>
+                    </div>
+                    <div className="pl-5 pr-5 pb-5">
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Asunto</th>
+                                    <th scope="col">Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.props.tickets.map(ticket => <Ticket ticket={ticket} key={ticket.id}/>)}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
     }
 }
 

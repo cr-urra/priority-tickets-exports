@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { PDFDownloadLink } from "@react-pdf/renderer";
-import PDF from './Pdf'
+//import { PDFDownloadLink } from "@react-pdf/renderer";
+import Pdf from './CreatePDF'
 
 export default class Formulario extends Component {
 
@@ -13,7 +13,7 @@ export default class Formulario extends Component {
     format: "",
     tickets: [],
     ticketsFilter: [],
-    pdf: true,
+    pdf: false,
     xslx: false,
     button: false
   }
@@ -171,12 +171,7 @@ export default class Formulario extends Component {
                     this.state.pdf && <h6 className="mb-4 text-left">Documento PDF generado correctamente, para descargar hacer click en el botón de Descargar PDF a continuación</h6>
                   }
                   {
-                    this.state.pdf && 
-                    <PDFDownloadLink document={<PDF/>} fileName="movielist.pdf" className="btn btn-danger"> 
-                    {
-                      ({ blob, url, loading, error }) => loading ? "Cargando documento..." : "Descargar PDF"
-                    }
-                    </PDFDownloadLink>
+                    this.state.pdf && <Pdf tickets={this.state.ticketsFilter} cliente={this.state.clienteMay.toUpperCase()}/>
                   }
                 </div>
                 <h6 className="mt-3">© Copyright 2021 | Todos los derechos reservados a Priority Ltda.</h6>
@@ -184,5 +179,3 @@ export default class Formulario extends Component {
        
     }
 }
-
-//                {this.state.pdf && <PDF/>}
