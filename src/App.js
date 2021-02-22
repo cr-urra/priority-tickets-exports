@@ -12,7 +12,7 @@ function App() {
                 <div className="col-xs-4 col-md-4 col-lg-3">
                   <img src={logo} alt="Logo"></img>
                 </div>
-                <h1 className="col-xs-2 col-md-8 col-lg-9 mt8 pl-2">Exportador de Tickets</h1>
+                <h1 className="col-xs-2 col-md-8 col-lg-9 mt8 pl-2 t-header">Exportador de Tickets</h1>
               </div>
               <Formulario/>
             </header>

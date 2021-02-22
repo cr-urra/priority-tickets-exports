@@ -19,7 +19,7 @@ export default class Formulario extends Component {
   }
 
   componentDidMount = async () => {
-    let direction = 'http://localhost:3000/priority-tickets-exports'
+    let direction = 'https://priority.cl/priority-tickets-exports/'
     let url = window.location.href;
     if(url.indexOf(direction) !== -1){
       if(url.indexOf('access_token=') !== -1){
@@ -77,7 +77,7 @@ export default class Formulario extends Component {
         arr.push(res)
         count = count + 1
       }
-      console.log(arr);
+      //console.log(arr);
     }
     arr.map(tickets => {
       this.setState({
@@ -87,7 +87,7 @@ export default class Formulario extends Component {
   }
 
   onChange = async () => {
-    const error = "Ha ocurrido un error al procesar la solicitud"
+    const error = "Ha ocurrido un error al procesar la solicitud, revise la consola para mayor información."
     this.setState({
       clienteMay: await this.onMayus(this.state.cliente),
       clienteMin: await this.onMinus(this.state.cliente),
@@ -105,7 +105,7 @@ export default class Formulario extends Component {
       && this.state.format !== "Tipo de formato"){
       try{
         await this.importTickets()
-        console.log("Tickets: ", this.state.tickets);
+        //console.log("Tickets: ", this.state.tickets);
         let filtrado = this.state.tickets.filter(ticket => {
           if(ticket.fields[0].value === this.state.clienteMay || ticket.fields[0].value === this.state.clienteMin)
             return true
@@ -130,7 +130,7 @@ export default class Formulario extends Component {
         this.state.format === "0" && this.setState({
           xslx: true
         })
-        console.log("filter: ", this.state.ticketsFilter);
+        //console.log("filter: ", this.state.ticketsFilter);
 
       }catch(e){
         alert(error)

@@ -10,7 +10,14 @@ const ExcelColumn = ExportExcel.ExcelColumn
 export default class CreateXSLX extends Component {
     render() {
         return  <div>
-                    <ReactHTMLTableToExcel id="boton-xslx" className="btn btn-danger" table="datos" filename={this.props.cliente} sheet="Tickets" buttonText="Descargar XSLX"/>
+                    <ReactHTMLTableToExcel 
+                        id="boton-xslx" 
+                        className="btn btn-danger" 
+                        table="datos" 
+                        filename={this.props.cliente} 
+                        sheet="Tickets" 
+                        buttonText="Descargar XSLX"
+                        />
                     <div className="pl-5 pr-5 pb-5 d-none">
                         <table className="table" id="datos">
                             <thead>
@@ -19,7 +26,6 @@ export default class CreateXSLX extends Component {
                                     <th scope="col">Solicitante</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Asunto</th>
-                                    
                                 </tr>
                                 </thead>
                             <tbody>
