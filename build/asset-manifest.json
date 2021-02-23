@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/priority-tickets-exports/static/css/main.237b2cc9.chunk.css",
-    "main.js": "/priority-tickets-exports/static/js/main.9619db90.chunk.js",
-    "main.js.map": "/priority-tickets-exports/static/js/main.9619db90.chunk.js.map",
-    "runtime-main.js": "/priority-tickets-exports/static/js/runtime-main.6f4bf6e0.js",
-    "runtime-main.js.map": "/priority-tickets-exports/static/js/runtime-main.6f4bf6e0.js.map",
-    "static/css/2.150d169a.chunk.css": "/priority-tickets-exports/static/css/2.150d169a.chunk.css",
-    "static/js/2.f5e94a3d.chunk.js": "/priority-tickets-exports/static/js/2.f5e94a3d.chunk.js",
-    "static/js/2.f5e94a3d.chunk.js.map": "/priority-tickets-exports/static/js/2.f5e94a3d.chunk.js.map",
-    "static/js/3.46636db1.chunk.js": "/priority-tickets-exports/static/js/3.46636db1.chunk.js",
-    "static/js/3.46636db1.chunk.js.map": "/priority-tickets-exports/static/js/3.46636db1.chunk.js.map",
-    "index.html": "/priority-tickets-exports/index.html",
-    "static/css/2.150d169a.chunk.css.map": "/priority-tickets-exports/static/css/2.150d169a.chunk.css.map",
-    "static/css/main.237b2cc9.chunk.css.map": "/priority-tickets-exports/static/css/main.237b2cc9.chunk.css.map",
-    "static/js/2.f5e94a3d.chunk.js.LICENSE.txt": "/priority-tickets-exports/static/js/2.f5e94a3d.chunk.js.LICENSE.txt"
+    "main.css": "/tickets-exports/static/css/main.5fa37eef.chunk.css",
+    "main.js": "/tickets-exports/static/js/main.92f9a55e.chunk.js",
+    "main.js.map": "/tickets-exports/static/js/main.92f9a55e.chunk.js.map",
+    "runtime-main.js": "/tickets-exports/static/js/runtime-main.1542ca22.js",
+    "runtime-main.js.map": "/tickets-exports/static/js/runtime-main.1542ca22.js.map",
+    "static/css/2.150d169a.chunk.css": "/tickets-exports/static/css/2.150d169a.chunk.css",
+    "static/js/2.5c7905db.chunk.js": "/tickets-exports/static/js/2.5c7905db.chunk.js",
+    "static/js/2.5c7905db.chunk.js.map": "/tickets-exports/static/js/2.5c7905db.chunk.js.map",
+    "static/js/3.46e5d746.chunk.js": "/tickets-exports/static/js/3.46e5d746.chunk.js",
+    "static/js/3.46e5d746.chunk.js.map": "/tickets-exports/static/js/3.46e5d746.chunk.js.map",
+    "index.html": "/tickets-exports/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/tickets-exports/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.5fa37eef.chunk.css.map": "/tickets-exports/static/css/main.5fa37eef.chunk.css.map",
+    "static/js/2.5c7905db.chunk.js.LICENSE.txt": "/tickets-exports/static/js/2.5c7905db.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6f4bf6e0.js",
+    "static/js/runtime-main.1542ca22.js",
     "static/css/2.150d169a.chunk.css",
-    "static/js/2.f5e94a3d.chunk.js",
-    "static/css/main.237b2cc9.chunk.css",
-    "static/js/main.9619db90.chunk.js"
+    "static/js/2.5c7905db.chunk.js",
+    "static/css/main.5fa37eef.chunk.css",
+    "static/js/main.92f9a55e.chunk.js"
   ]
 }

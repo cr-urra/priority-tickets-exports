@@ -19,7 +19,7 @@ export default class Formulario extends Component {
   }
 
   componentDidMount = async () => {
-    let direction = 'https://priority.cl/priority-tickets-exports/'
+    let direction = 'https://priority.cl/tickets-exports/'
     let url = window.location.href;
     if(url.indexOf(direction) !== -1){
       if(url.indexOf('access_token=') !== -1){
@@ -79,7 +79,7 @@ export default class Formulario extends Component {
       }
       //console.log(arr);
     }
-    arr.map(tickets => {
+    arr.forEach(tickets => {
       this.setState({
         tickets: this.state.tickets.concat(tickets.data.tickets)
       })
@@ -113,7 +113,7 @@ export default class Formulario extends Component {
             return false  
         })
         filtrado = filtrado.filter(ticket => {
-          if(ticket.status === "open" || ticket.status == "pending" || ticket.status == "new")
+          if(ticket.status === "open" || ticket.status === "pending" || ticket.status === "new")
             return true
           else
             return false

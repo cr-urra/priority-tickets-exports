@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
-import ExportExcel from 'react-export-excel'
 import Ticket from './Ticket'
 import ReactHTMLTableToExcel from 'react-html-table-to-excel'
-
-const ExcelFile = ExportExcel.ExcelFile
-const ExcelSheet = ExportExcel.ExcelSheet
-const ExcelColumn = ExportExcel.ExcelColumn
 
 export default class CreateXSLX extends Component {
     render() {
