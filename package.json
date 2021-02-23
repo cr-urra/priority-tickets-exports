@@ -2,7 +2,7 @@
   "name": "tickets",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cr-urra.github.io/tickets-exports",
+  "homepage": "https://cr-urra.github.io/priority-tickets-exports",
   "dependencies": {
     "@react-pdf/renderer": "^1.6.13",
     "@testing-library/jest-dom": "^5.11.9",

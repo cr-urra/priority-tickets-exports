@@ -183,7 +183,7 @@ export default class Formulario extends Component {
                     this.state.xslx && <Xslx tickets={this.state.ticketsFilter} cliente={this.state.clienteMay.toUpperCase()}/>
                   }
                 </div>
-                <h6 className="mt-3">© Copyright 2021 | Todos los derechos reservados a Priority Ltda.</h6>
+                <h6 className="mt-3">© Copyright 2021 | Todos los derechos reservados a Priority Ltda. </h6>
               </div>
        
     }
