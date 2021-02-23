@@ -19,7 +19,7 @@ export default class Formulario extends Component {
   }
 
   componentDidMount = async () => {
-    let direction = 'https://priority.cl/tickets-exports/'
+    let direction = 'https://priority.cl/priority-tickets-exports/'
     let url = window.location.href;
     if(url.indexOf(direction) !== -1){
       if(url.indexOf('access_token=') !== -1){
