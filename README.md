@@ -1,2 +1,4 @@
 # Priority tickets exports
-Aplicación ligera desarrollada en React para gestionar la exportación de tickets desde la plataforma Zendesk, apoyado por la empresa Priority.
+Aplicación desarrollada en React para gestionar la exportación de tickets desde la plataforma Zendesk.
+</br>
+Derechos reservados para le empresa Priority Ltda.
